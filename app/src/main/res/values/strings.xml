@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NEWS_APP</string>
+
+    <string name="profile_email">abhishekverma878787@gmail.com</string>
+    <string name="profile_name">Abhishek Verma</string>
+    <string name="profile_phoneNo">7069377980</string>
+    <string name="profile_collegeName">National Institute of technology Goa College name ....</string>
+    <string name="saavyas">Saavyas</string>
+    <string name="highlights">High Lights</string>
+    <string name="username">Username</string>
+    <string name="example_phone_no">1111111111</string>
+    <string name="profile">Profile</string>
+    <string name="faqs">FAQs</string>
+    <string name="sponsors">Sponsors</string>
+    <string name="developers">Developers</string>
+    <string name="about_us">About Us</string>
+</resources>

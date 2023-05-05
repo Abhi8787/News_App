@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="registerViewModel"
+            type="com.example.news_app.auth.RegisterViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".auth.RegistrationActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".RegistrationActivity">
+
+            <LinearLayout
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1976d2"
+                android:textCursorDrawable="@color/black"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1976d2"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="10dp">
+
+<!--                    <ImageView-->
+
+<!--                        android:id="@+id/profile"-->
+<!--                        android:layout_width="9dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:src="@drawable/circles"-->
+<!--                        app:civ_border_color="#FF000000"-->
+<!--                        app:civ_border_width="2dp" />-->
+
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/click"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile"
+                            android:layout_width="150dp"
+                            android:layout_height="130dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="16dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile"
+                            app:civ_border_color="#FBFAFA"
+                            app:civ_border_width="2dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.249"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="15dp"-->
+<!--                            android:layout_height="15dp"-->
+<!--                            android:layout_marginEnd="30dp"-->
+<!--                            android:layout_marginTop="-20dp"-->
+<!--                            android:layout_alignEnd="@id/profile"-->
+<!--                            android:layout_alignBottom="@id/profile"-->
+<!--                            android:backgroundTint="@color/white"-->
+<!--                            android:src="@drawable/ic_baseline_ads_click_24" />-->
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/spartan_bold"
+                            android:padding="10dp"
+                            android:textSize="22dp"
+                            android:textColor="@color/white"
+                            android:text="WELCOME TO " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/spartan_bold"
+                            android:textSize="30dp"
+                            android:textColor="@color/white"
+                            android:padding="10dp"
+                            android:text="NEWS APP" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:elevation="5dp"
+                    android:background="@drawable/rectangle_shape"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="REGISTRATION"
+                        android:textColor="@color/white"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Name"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@={registerViewModel.name}"
+                            android:background="@drawable/edittext_shape"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Email"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@{registerViewModel.emails}"
+                            android:editable="false"
+                            android:background="@drawable/edittext_shape"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Gender"
+                            android:textColor="@color/white" />
+
+
+                        <RadioGroup
+                            android:id="@+id/gender"
+                            android:onCheckedChanged="@{(group, checkedId) -> registerViewModel.onGenderSelected(checkedId)}"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/maleRadioButton"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Male" />
+
+                            <RadioButton
+                                android:id="@+id/femaleRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/white"
+                                android:layout_height="wrap_content"
+                                android:text="Female" />
+
+                            <RadioButton
+                                android:id="@+id/otherRadioButton"
+                                android:layout_weight="1"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Others" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Phone Number"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/phoneNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:text="@={registerViewModel.phone}"
+                            android:background="@drawable/edittext_shape"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="City"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@={registerViewModel.city}"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:background="@drawable/edittext_shape"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Pin Code"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/pinCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:imeOptions="actionNext"
+                            android:maxLength="6"
+                            android:inputType="phone"
+                            android:singleLine="true"
+                            android:text="@={registerViewModel.pinCode}"
+                            android:background="@drawable/edittext_shape"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="State"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/collegeName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:text="@={registerViewModel.state}"
+                            android:background="@drawable/edittext_shape"
+                            android:padding="10dp"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/registerUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_shape"
+                    android:padding="10dp"
+                    android:onClick="@{()->registerViewModel.registerUser()}"
+                    android:paddingBottom="10dp"
+                    android:text="Register"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

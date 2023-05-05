@@ -1,0 +1,111 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NewsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:context=".ui.NewsActivity">
+
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:background="@color/color_theme_primary"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/flFragment">
+
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:background="@drawable/ic_all_news"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/ToolbarText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Breaking News"
+                android:fontFamily="@font/spartan_bold"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:textSize="25dp"
+                android:textColor="@color/white"/>
+
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="25dp"
+                android:background="@drawable/off"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/newsNavHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph"
+                tools:layout="@layout/fragment_breaking_news" />
+        </FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flFragment"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawer_navigation"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/white"
+        app:menu="@menu/drawer_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
